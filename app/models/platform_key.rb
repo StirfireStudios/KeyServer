@@ -1,0 +1,2 @@
+class PlatformKey < ApplicationRecord
+end
