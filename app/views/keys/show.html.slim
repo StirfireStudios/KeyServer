@@ -1,0 +1,20 @@
+h1= "Key For #{@key.game.name}"
+
+- flash.each do |type, message|
+  .flash
+    = message
+
+- if @key.redeemed?
+  div
+    = @key.platform_key.platform.name
+  div
+    = @key.platform_key.value
+- else
+  div
+    | Get Key for:
+    = form_tag key_redeem_path(@key.id) do
+      - @key.game.platforms.each do |platform|
+        div
+          = radio_button_tag 'platform_id', platform.id
+          = platform.name
+      = submit_tag "Redeem"

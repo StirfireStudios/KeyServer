@@ -1,0 +1,10 @@
+h1 Redeem Key
+
+- flash.each do |type, message|
+  .flash
+    = message
+
+= form_tag keys_url do
+  label Key
+  input type="text" name="id"
+  = submit_tag "Retrieve"

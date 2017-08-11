@@ -7,17 +7,24 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+/.byebug_history
+
+# Ignore various site-specific configs
+/config/database.yml
+/config/devise.yml
+/config/secrets.yml
+/config/recaptcha.yml
+/config/deploy/production.rb
+/config/deploy/staging.rb
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp/*
 !/log/.keep
-!/tmp/.keep
+/tmp
+/results
 
+#ignore node
 /node_modules
-/yarn-error.log
 
-.byebug_history
+#ignore image uploads
+/public/uploads
