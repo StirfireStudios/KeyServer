@@ -1,24 +1,24 @@
-# README
+# Mercury website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby Version
 
-Things you may want to cover:
+Ruby version is handled by .ruby-version, suggest you use [RVM](http://rvm.io) to handle it properly
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+  1. Postgres 9.6. A local install is recommended. On a Mac I recommend [Postgres.app](https://postgresapp.com)
+  2. Ruby 2.3.3 - this can be installed via [RVM](http://rvm.io) (which is the reccomended way to handle ruby and gems)
 
-* Configuration
+## Setup
 
-* Database creation
+  1. Open a terminal to your rails projects directory and then clone the project.
+  2. Make sure you know your postgres's root username and password.
+  3. run `bin/setup` from the directory created by the clone in step 1 and enter your username and password.
 
-* Database initialization
+## Running
 
-* How to run the test suite
+Once setup is done, you can start a local server by opening a terminal, going to the directory created by the clone in setup step 1 and running `rails s`.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Updating
 
-* Deployment instructions
-
-* ...
+After pulling/merging a branch it's best to run a `rake db:migrate` to ensure your database is up to date.

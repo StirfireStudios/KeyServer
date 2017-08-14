@@ -8,13 +8,13 @@ default: &default
 
 development:
   <<: *default
-  database: hostadmin_dev
-  username: hostadmin_dev
+  database: sf_keyserver_dev
+  username: sf_keyserver_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: hostadmin_test
-  username: hostadmin_dev
+  database: sf_keyserver_test
+  username: sf_keyserver_dev
