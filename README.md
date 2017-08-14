@@ -1,4 +1,4 @@
-# Mercury website
+# Keyserver website
 
 ## Ruby Version
 
