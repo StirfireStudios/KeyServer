@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170811034414) do
   end
 
   create_table "platform_keys", force: :cascade do |t|
-    t.string "key"
+    t.string "value"
     t.integer "platform_id"
     t.integer "game_id"
     t.uuid "key_id"

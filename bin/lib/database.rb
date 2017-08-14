@@ -68,7 +68,7 @@ private
     )
 
     if PGCRYPTO
-      db_connection.exec("CREATE EXTENSION pgcrypto")
+      db_connection.exec("CREATE EXTENSION IF NOT EXISTS pgcrypto")
     end
   end
 end
