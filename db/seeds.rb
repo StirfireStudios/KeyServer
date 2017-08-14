@@ -14,9 +14,15 @@ siee = Platform.create(name: "Playstation Network - America")
 siea = Platform.create(name: "Playstation Network - Europe")
 oculus = Platform.create(name: "Oculus")
 
-(1..10).each do |index|
-  PlatformKey.create(game: ff, platform: steam, value: "Steam Key #{index}")
-  PlatformKey.create(game: ff, platform: siee, value: "PSN-America Key #{index}")
-  PlatformKey.create(game: ff, platform: siea, value: "PSN-Europe Key #{index}")
-  PlatformKey.create(game: ff, platform: oculus, value: "Oculus Key #{index}")
+key = 1
+
+(1..10).each do
+  [ff, symph].each do |game|
+    keystring = key.to_s.rjust(2, "0")
+    PlatformKey.create(game: game, platform: steam, value: "STM#{keystring}-MFVVV-4PDKF")
+    PlatformKey.create(game: game, platform: siee, value: "PA#{keystring}-H3N5-ERFK")
+    PlatformKey.create(game: game, platform: siea, value: "PE#{keystring}-K4H2-RTFD")
+    PlatformKey.create(game: game, platform: oculus, value: "OCL#{keystring}-G6NEC-GQ49R-GWPHE-W6CNR")
+    key += 1
+  end
 end
