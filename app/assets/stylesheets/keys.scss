@@ -1,3 +1,126 @@
 // Place all the styles related to the keys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Global variables:
+//grid
+$grid__bp-sm: 576;
+$grid__bp-md: 768;
+$grid__bp-lg: 992;
+$grid__bp-xl: 1200;
+$grid__cols: 12;
+
+$map-grid-props: (
+	'': 0,
+	'-sm': $grid__bp-sm,
+	'-md': $grid__bp-md,
+	'-lg': $grid__bp-lg,
+	'-xl': $grid__bp-xl
+);
+
+//colors
+$font-stack: sans-serif;
+$primary-color: #000;
+$secondary-color: #fff;
+$teritary-color: rgb(129,130,133);
+$higlight-color-1: rgb(237,28,36);
+$highlight-color-2: rgb(255,236,0);
+$btn-primary-color: rgb(130,193,56);
+
+//mixins
+@mixin create-mq($breakpoint) {
+  @if($breakpoint == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $breakpoint *1px) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint) {
+    &__col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+    @for $i from 1 through $grid-cols {
+      &__col#{$modifier}-#{$i} {
+        flex-basis: (100 / ($grid-cols / $i) ) * 1%;
+      }
+      &__col#{$modifier}-offset-#{$i} {
+        margin-left: (100 / ($grid-cols / $i) ) * 1%;
+      }
+    }
+  }
+}
+
+//reset styles
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: $font-stack;
+	background-color: $primary-color;
+	color: $secondary-color;
+}
+//page setup
+.container{
+	max-width: $grid__bp-md *1px;
+	margin: 0 auto;
+	padding: 3em;
+	&--fluid{
+		max-width: 100%;
+
+	}
+	&__row{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	@each $modifier , $breakpoint in $map-grid-props {
+	@include create-col-classes($modifier, $grid__cols, $breakpoint);
+	}
+}
+
+@at-root{
+	[class*='container__col-']{
+		&.higher{
+			min-height: 60px;
+		}
+		min-height: 30px;
+      background-color: $primary-color;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+	}
+}
+
+.title{
+	font-size: 2em;
+	padding: .5em;
+}
+
+//form styles
+label, input[name="id"]{
+	margin-right: 1rem;
+	font-size: 1em;
+}
+input{
+	height: 2rem;
+}
+
+input[type="submit"]{
+	width: 5rem;
+	border: 1px solid $btn-primary-color;
+	border-radius: .5rem;
+	background-color: $btn-primary-color;
+	font-weight: 700;
+
+	&:hover{
+		border-color: $highlight-color-2;
+		background-color: $highlight-color-2;
+
+	}
+}
