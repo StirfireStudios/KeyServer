@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title KeyGen
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    div class="container"
+      = yield
+
+      div class="container__row "
+        div class="container__col-4"
+          = image_tag("FreedomFallLogo.png")
+        div class="container__col-4"
+          = image_tag("StirfireStudioLogo.svg")
+        div class="container__col-4"
+          = image_tag("SymphonyLogo.png")
+
+      div class="container__row"
+         div class="container__col-12"
+          p class="footer"
+            | &copy;
+            = "2017 Stirfire Studios"

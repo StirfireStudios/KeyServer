@@ -1,28 +1,15 @@
-div class="container"
-  div class="container__row"
-    div class="container__col-6 container__col-offset-3"
-      h1 class="title"
-        | Redeem Your Key
-        div class="container__row"
-    div class="container__col-12"
-      - flash.each do |type, message|
-        .flash
-          = message
+div class="container__row"
+  div class="container__col-6 container__col-offset-3"
+    h1 class="title"
+      | Redeem Your Key
+      div class="container__row"
+  div class="container__col-12"
+    - flash.each do |type, message|
+      .flash
+        = message
 
-  div class="container__row"
-    = form_tag keys_url, {class: "container__col-4 container__col-offset-3"} do
-      label Key
-      input type="text" name="id"
-      = submit_tag "Retrieve"
-
-  div class="container__row "
-    div class="container__col-4"
-      = image_tag("FreedomFallLogo.png")
-    div class="container__col-4"
-      = image_tag("StirfireStudioLogo.svg")
-    div class="container__col-4"
-      = image_tag("SymphonyLogo.png")
-
-  div class="container__row"
-     div class="container__col-12"
-  		p class="footer" &copy; 2017 Stirfire Studio
+div class="container__row"
+  = form_tag keys_url, {class: "container__col-4 container__col-offset-3"} do
+    label Key
+    input type="text" name="id"
+    = submit_tag "Retrieve"

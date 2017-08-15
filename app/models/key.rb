@@ -29,8 +29,12 @@ class Key < ApplicationRecord
 
   def self.find_matching_key(friendly_key)
     keystring = friendly_key.strip.scan(/[0-9A-Z]/).join
-    hexstring = BaseX::Base30U.string_to_integer(keystring).to_s(16)
-    uuidstring = "#{hexstring[0..7]}-#{hexstring[8..11]}-#{hexstring[12..15]}-#{hexstring[16..19]}-#{hexstring[20..-1]}"
-    self.where(id: uuidstring).first
+    begin
+      hexstring = BaseX::Base30U.string_to_integer(keystring).to_s(16)
+      uuidstring = "#{hexstring[0..7]}-#{hexstring[8..11]}-#{hexstring[12..15]}-#{hexstring[16..19]}-#{hexstring[20..-1]}"
+      self.where(id: uuidstring).first
+    rescue BaseX::InvalidNumeral
+      return nil
+    end
   end
 end
