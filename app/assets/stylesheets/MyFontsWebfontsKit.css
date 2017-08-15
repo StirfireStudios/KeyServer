@@ -1,0 +1,60 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3429453, 2017-07-31T03:35:19-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: OfficinaSanSCITCTTBold by ITC
+ * URL: https://www.myfonts.com/fonts/itc/officina-sans/officina-san-sc-bold/
+ * Copyright: Copyright (c) 2001 Agfa Monotype Corporation. All rights reserved. ITC Officina is a registered trademark of International Typeface Corporation. ITC Officina was designed by Erik Spiekermann and Ole Schaefer.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: OfficinaSansOSITCTTBold by ITC
+ * URL: https://www.myfonts.com/fonts/itc/officina-sans/os-bold/
+ * Copyright: Copyright (c) 2001 Agfa Monotype Corporation. All rights reserved. ITC Officina is a registered trademark of International Typeface Corporation. ITC Officina was designed by Erik Spiekermann and Ole Schaefer.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: OfficinaSansITCTTBold by ITC
+ * URL: https://www.myfonts.com/fonts/itc/officina-sans/bold/
+ * Copyright: Copyright (c) 2001 Agfa Monotype Corporation. All rights reserved. ITC Officina is a registered trademark of International Typeface Corporation. ITC Officina was designed by Erik Spiekermann and Ole Schaefer.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: BankGothicBT-Light by Bitstream
+ * URL: https://www.myfonts.com/fonts/bitstream/bank-gothic/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * Licensed pageviews: 20,000
+ * 
+ * Webfont: BankGothicBT-Medium by Bitstream
+ * URL: https://www.myfonts.com/fonts/bitstream/bank-gothic/medium/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * Licensed pageviews: 20,000
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3429453
+ * 
+ * © 2017 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/34544d");
+
+  
+@font-face {font-family: 'OfficinaSanSCITCTTBold';src: url('webfonts/34544D_0_0.eot');src: url('webfonts/34544D_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_0_0.woff2') format('woff2'),url('webfonts/34544D_0_0.woff') format('woff'),url('webfonts/34544D_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansOSITCTTBold';src: url('webfonts/34544D_1_0.eot');src: url('webfonts/34544D_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_1_0.woff2') format('woff2'),url('webfonts/34544D_1_0.woff') format('woff'),url('webfonts/34544D_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansITCTTBold';src: url('webfonts/34544D_2_0.eot');src: url('webfonts/34544D_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_2_0.woff2') format('woff2'),url('webfonts/34544D_2_0.woff') format('woff'),url('webfonts/34544D_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BankGothicBT-Light';src: url('webfonts/34544D_3_0.eot');src: url('webfonts/34544D_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_3_0.woff2') format('woff2'),url('webfonts/34544D_3_0.woff') format('woff'),url('webfonts/34544D_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'BankGothicBT-Medium';src: url('webfonts/34544D_4_0.eot');src: url('webfonts/34544D_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_4_0.woff2') format('woff2'),url('webfonts/34544D_4_0.woff') format('woff'),url('webfonts/34544D_4_0.ttf') format('truetype');}
+ 

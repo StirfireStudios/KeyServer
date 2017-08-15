@@ -1,6 +1,25 @@
 // Place all the styles related to the keys controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com
+//import of font-family
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/34544d");
+
+
+@font-face {font-family: 'OfficinaSanSCITCTTBold';src: url('webfonts/34544D_0_0.eot');src: url('webfonts/34544D_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_0_0.woff2') format('woff2'),url('webfonts/34544D_0_0.woff') format('woff'),url('webfonts/34544D_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'OfficinaSansOSITCTTBold';src: url('webfonts/34544D_1_0.eot');src: url('webfonts/34544D_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_1_0.woff2') format('woff2'),url('webfonts/34544D_1_0.woff') format('woff'),url('webfonts/34544D_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'OfficinaSansITCTTBold';src: url('webfonts/34544D_2_0.eot');src: url('webfonts/34544D_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_2_0.woff2') format('woff2'),url('webfonts/34544D_2_0.woff') format('woff'),url('webfonts/34544D_2_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'BankGothicBT-Light';src: url('webfonts/34544D_3_0.eot');src: url('webfonts/34544D_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_3_0.woff2') format('woff2'),url('webfonts/34544D_3_0.woff') format('woff'),url('webfonts/34544D_3_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'BankGothicBT-Medium';src: url('webfonts/34544D_4_0.eot');src: url('webfonts/34544D_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/34544D_4_0.woff2') format('woff2'),url('webfonts/34544D_4_0.woff') format('woff'),url('webfonts/34544D_4_0.ttf') format('truetype');}
+
 
 //Global variables:
 //grid
@@ -18,14 +37,20 @@ $map-grid-props: (
 	'-xl': $grid__bp-xl
 );
 
+//fonts
+$title-font-stack: OfficinaSanSCITCTTBold, sans-serif;
+$main-font-stack: BankGothicBT-Light, sans-serif;
+$bold-main-font-stack: BankGothicBT-Medium, sans-serif;
+
 //colors
-$font-stack: sans-serif;
 $primary-color: #000;
 $secondary-color: #fff;
 $teritary-color: rgb(129,130,133);
-$higlight-color-1: rgb(237,28,36);
+$highlight-color-1: rgb(237,28,36);
 $highlight-color-2: rgb(255,236,0);
 $btn-primary-color: rgb(130,193,56);
+
+
 
 //mixins
 @mixin create-mq($breakpoint) {
@@ -61,7 +86,7 @@ $btn-primary-color: rgb(130,193,56);
 	padding: 0;
 }
 body{
-	font-family: $font-stack;
+	font-family: $main-font-stack;
 	background-color: $primary-color;
 	color: $secondary-color;
 }
@@ -90,7 +115,6 @@ body{
 			min-height: 60px;
 		}
 		min-height: 30px;
-      background-color: $primary-color;
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -98,25 +122,55 @@ body{
 }
 
 .title{
+	font-family: $title-font-stack;
 	font-size: 2em;
 	padding: .5em;
 }
 
+.flash{
+
+  color: $highlight-color-1;
+  font-family: $title-font-stack;
+  font-size: 1.2em;
+  background-color: $secondary-color;
+  border: 1px solid $highlight-color-1;
+  border-radius: .5em;
+  padding: .4em;
+  margin-bottom: 2em;
+
+}
+img{
+  padding-top: 50px;
+  width: 100%
+
+}
+
+.footer{
+  margin: 100px;
+  padding: 50px;
+  font-size: .75em;
+  text-align: center;
+}
 //form styles
 label, input[name="id"]{
 	margin-right: 1rem;
-	font-size: 1em;
+	font-size: 1.25em;
 }
 input{
 	height: 2rem;
 }
+input[type="radio"]{
+	font-size: 1em;
+}
 
 input[type="submit"]{
-	width: 5rem;
+	width: 7rem;
 	border: 1px solid $btn-primary-color;
 	border-radius: .5rem;
 	background-color: $btn-primary-color;
-	font-weight: 700;
+  font-family: $bold-main-font-stack;
+  font-size: 1.2em;
+
 
 	&:hover{
 		border-color: $highlight-color-2;
