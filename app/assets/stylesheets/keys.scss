@@ -127,7 +127,28 @@ body{
 	font-size: 2em;
 	padding: .5em;
 }
+h2{
+  color: $highlight-color-1;
+  font-family: 'BankGothicBT-Medium';
+  font-size: 2em;
+  text-shadow: 0 1px 0 #fff,
+               0 2px 0 #f9f9f9,
+               0 3px 0 #eee,
+               0 4px 0 #e9e9e9,
+               0 5px 0 #ddd,
+               0 6px 1px rgba(255,255,255,.1),
+               0 0 5px rgba(255,255,255,.1),
+               0 1px 3px rgba(255,255,255,.3),
+               0 3px 5px rgba(255,255,255,.2),
+               0 5px 10px rgba(255,255,255,.25),
+               0 10px 10px rgba(255,255,255,.2),
+               0 20px 20px rgba(255,255,255,.15);
+}
 
+p{
+  font-size: 1.2em;
+  line-height: 1.8em;
+}
 .flash{
 
   color: $highlight-color-1;
@@ -161,7 +182,10 @@ img[alt="Stirfirestudiologo"]{
 
 }
 
-
+.outline{
+  border: 1px solid $secondary-color;
+  padding-bottom: 2em;
+}
 
 .footer{
   margin: 100px;
