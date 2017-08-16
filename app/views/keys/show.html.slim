@@ -10,10 +10,10 @@ div class="container__row"
 
 - if @key.redeemed?
   div class="container__row"
-    div class="container__col-6 container__col-offset-4"
+    div class="container__col-12"
       = @key.platform_key.platform.name
     div class="container__row"
-        div class="container__col-6 container__col-offset-4"
+        div class="container__col-12"
           = @key.platform_key.value
 - else
   div class="container__row"
@@ -21,7 +21,7 @@ div class="container__row"
       | No keys currently available, please try again later.
     - else
       | Get Key for:
-      = form_tag key_redeem_path(@key.id), {class: "container__col-4 container__col-offset-4"} do
+      = form_tag key_redeem_path(@key.id), {class: "container__col-12"} do
         - @available_platforms.each do |platform|
             = radio_button_tag 'platform_id', platform.id
             = platform.name
