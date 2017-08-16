@@ -12,8 +12,11 @@ html
       div class="container__row "
         div class="container__col-4"
           = image_tag("FreedomFallLogo.png")
-        div class="container__col-4 white-bkgrnd"
-          = image_tag("StirfireStudioLogo.png")
+        div class="container__col-4"
+          picture
+            source media="(min-width: 576px)" srcset = image_tag("StirfireStudioLogo@2x.png")
+            source media="(min-width:1200px)" srcset = image_tag("StirfireStudioLogo@3x.png")
+            =image_tag("StirfireStudioLogo.png")
         div class="container__col-4"
           = image_tag("SymphonyLogo.png")
 

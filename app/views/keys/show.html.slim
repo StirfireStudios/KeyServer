@@ -1,5 +1,5 @@
 div class="container__row"
-  div class="container__col-4 container__col-offset-4"
+  div class="container__col-6 container__col-offset-4"
     h1 class="title" = "Key For #{@key.game.name}"
 
 div class="container__row"
@@ -9,16 +9,16 @@ div class="container__row"
         = message
 
 - if @key.redeemed?
-  div class="container__row"
-    div class="container__col-6 container__col-offset-4"
-      = @key.platform_key.platform.name
+  div class="container__row outline"
+    div class="container__col-6 container__col-offset-3"
+      h2 = @key.platform_key.platform.name
     div class="container__row"
-        div class="container__col-6 container__col-offset-4"
-          = @key.platform_key.value
+        div class="container__col-6 container__col-offset-3"
+          p = @key.platform_key.value
 - else
   div class="container__row"
-    | Get Key for:
-    = form_tag key_redeem_path(@key.id), {class: "container__col-4 container__col-offset-4"} do
+    | Key for:
+    = form_tag key_redeem_path(@key.id), {class: "container__col-12"} do
       - @key.game.platforms.each do |platform|
           = radio_button_tag 'platform_id', platform.id
           = platform.name
