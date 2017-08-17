@@ -1,32 +1,50 @@
 require 'highline'
 
 module CliUtils
-  def self.GetGame(prompt = "Game Name?")
+  def self.GetObject(type, prompt = "Name?")
     cli = HighLine.new
-    selected_game = nil
-    while selected_game.blank?
+    selected = nil
+    while selected.blank?
       query_string = cli.ask prompt
       if query_string.strip.blank?
         puts "Nothing entered.\n"
         next
       end
-      games = Game.where("LOWER(name) LIKE lower(?)", "%#{query_string.strip}%")
-      if games.empty?
-        puts "No Matching Games\n"
+      matches = type.where("LOWER(name) LIKE lower(?)", "%#{query_string.strip}%")
+      if matches.empty?
+        puts "None Matching\n"
         next
       end
 
       menu = HighLine::Menu.new
 
       cli.choose do |menu|
-        games.each do |game|
-          menu.choice(game.name) { selected_game = game }
+        matches.each do |match|
+          menu.choice(match.name) { selected = match }
         end
         menu.choice("None of the above")
       end
     end
 
-    return selected_game
+    return selected
+  end
+
+  def self.GetFile(prompt = "Enter filename")
+    cli = HighLine.new
+    file_exists = false
+    filename = nil
+
+    until file_exists
+      filename = cli.ask(prompt)
+      if filename.strip.blank?
+        puts "Nothing entered.\n"
+        next
+      end
+
+      file_exists = File.exists? filename
+    end
+
+    return filename
   end
 
   def self.GetInteger(prompt = "Enter Number")
