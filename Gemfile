@@ -32,7 +32,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# convert into arbitrary bases
 gem 'base_x', '~> 0.8.1'
+
+# CLI prompt util
+gem 'highline'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
