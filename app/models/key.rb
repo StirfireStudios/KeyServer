@@ -2,6 +2,9 @@ class Key < ApplicationRecord
   belongs_to :game
   has_one :platform_key
 
+  validates :redeemed_at, absence: true, unless: :redeemed?
+  validates :redeemed_at, presence: true, if: :redeemed?
+
   def friendly_key
     number = id.scan(/[0-9a-f]/).join.to_i(16)
     keystring = BaseX::Base30U.integer_to_string(number)
@@ -21,6 +24,8 @@ class Key < ApplicationRecord
       unless key.nil?
         key.key = self
         key.save
+        self.redeemed_at = Time.now
+        self.save
       end
     end
 
