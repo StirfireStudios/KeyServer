@@ -10,7 +10,8 @@ module CliUtils
         puts "Nothing entered.\n"
         next
       end
-      matches = type.where("LOWER(name) LIKE lower(?)", "%#{query_string.strip}%")
+      attr_name = getTypeQueryField(type)
+      matches = type.where("LOWER(#{attr_name}) LIKE lower(?)", "%#{query_string.strip}%")
       if matches.empty?
         puts "None Matching\n"
         next
@@ -20,7 +21,7 @@ module CliUtils
 
       cli.choose do |menu|
         matches.each do |match|
-          menu.choice(match.name) { selected = match }
+          menu.choice(match[attr_name]) { selected = match }
         end
         menu.choice("None of the above")
       end
@@ -55,6 +56,12 @@ module CliUtils
   def self.Confirm(prompt = "Proceed? (y/n)")
     cli = HighLine.new
     cli.agree(prompt)
+  end
+
+private
+  def self.getTypeQueryField(type)
+    valid_attrs = ["name", "value", "id"] & type.attribute_names
+    valid_attrs[0]
   end
 
 end

@@ -25,6 +25,7 @@ namespace :keys do
   desc "Import redeemable keys for a given game"
   task "import:redeemable" => :environment do
     filename = CliUtils.GetFile("File to import keys from?")
+    category = CliUtils.GetObject(KeyCategory, "What category do these keys go in?")
     game = CliUtils.GetObject(Game, "Game to import keys for?")
 
     if CliUtils.Confirm("import keys for #{game.name} from #{filename}?")
@@ -38,7 +39,7 @@ namespace :keys do
           if Key.where(id: uuidstring).present?
             print "Line #{line_index} key #{key} exists\n"
           else
-            Key.create(game: game, id: uuidstring)
+            Key.create(game: game, id: uuidstring, key_category: category)
           end
         rescue BaseX::InvalidNumeral
           print "Line #{line_index} has unparsable key - #{key}\n"

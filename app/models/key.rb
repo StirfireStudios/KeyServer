@@ -1,5 +1,6 @@
 class Key < ApplicationRecord
   belongs_to :game
+  belongs_to :key_category
   has_one :platform_key
 
   validates :redeemed_at, absence: true, unless: :redeemed?
