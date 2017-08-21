@@ -3,7 +3,7 @@ lock "3.9.0"
 
 set :application, "stirfire-keyserver"
 set :repo_url, "git@github.com:StirfireStudios/KeyServer.git"
-set :rvm_ruby_version, "2.4.0"
+set :rvm_ruby_version, "2.4.0@stirfire-keyserver"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
