@@ -11,9 +11,22 @@ class KeysController < ApplicationController
   end
 
   def show
-    @key = Key.find_matching_key(params[:id])
-    if @key.nil?
+    key = Key.find_matching_key(params[:id])
+    if key.nil?
       redirect_to root_path, :flash => { :error => "Invalid key - please check and try again" }
+      return
+    end
+
+    @game = key.game
+
+    if key.redeemed?
+      @platform_key = key.platform_key
+      @platform = @platform_key.platform
+      render "redeemed"
+    else
+      @key = key
+      @available_platforms = @game.available_platforms
+      render "redeemable"
     end
   end
 

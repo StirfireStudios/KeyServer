@@ -1,0 +1,22 @@
+div class="container__row"
+  div class="container__col-12"
+    h1 class="title" = "Redeem key For #{@game.name}"
+
+div class="container__row"
+  div class="container__col-6 container__col-offset-4"
+    - flash.each do |type, message|
+      .flash
+        = message
+
+div class="container__row"
+  - if @available_platforms.empty?
+    | No keys currently available, please try again later.
+  - else
+    | Get Key for:
+    = form_tag key_redeem_path(@key.id), {class: "container__col-12"} do
+      ul class='flex-outer'
+        - @available_platforms.each do |platform|
+          li
+            = radio_button_tag 'platform_id', platform.id
+            = platform.name
+      = submit_tag "Redeem"
